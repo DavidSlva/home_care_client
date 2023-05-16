@@ -1,10 +1,11 @@
+import 'antd/dist/reset.css';
+import SliderApp from './components/SliderApp';
+import LayoutAdmin from './components/layouts/LayoutAdmin';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>App de react</h1>
-      </header>
-    </div>
+    <LayoutAdmin hola="buenos días Leo">
+      <SliderApp />
+    </LayoutAdmin>
   );
 }
 
