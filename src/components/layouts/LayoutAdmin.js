@@ -15,6 +15,9 @@ const LayoutAdmin = (props) => {
             'title': e.target.value
         })
     }
+
+
+    
   return (
     <Layout>
         <Sider >Sider</Sider>
