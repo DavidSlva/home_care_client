@@ -1,11 +1,26 @@
 import 'antd/dist/reset.css';
-import SliderApp from './components/SliderApp';
-import LayoutAdmin from './components/layouts/LayoutAdmin';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
+import routes from './config/routes';
 function App() {
+  console.log(routes);
   return (
-    <LayoutAdmin hola="buenos días Leo">
-      <SliderApp />
-    </LayoutAdmin>
+    <BrowserRouter>
+      <Routes>
+        {
+          routes.map((route, index) => (
+            <Route
+              key={toString(index)}
+              path={route.path}
+              element={
+                <route.layout>
+                  <route.element/>
+                </route.layout>
+              }
+            />
+          ))
+        }
+      </Routes>
+    </BrowserRouter>
   );
 }
 
