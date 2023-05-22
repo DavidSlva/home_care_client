@@ -1,0 +1,72 @@
+.login-form{
+    padding: 10px 20px;
+    &__button{
+        width: 100%;
+        background-color: $primary-color;
+        color: $font-light;
+        font-size: 0em + 20px / $defaultFontSize ;
+        height: 42px;
+        &:hover{
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            border-color: rgba($color: #000000, $alpha: 0.5);
+            color: $font-light;
+        }
+    }
+}
+
+.sign-in{
+    padding: 100px 280px;
+    background: url('../../img/jpg/pexels-johannes-plenio-1103970.jpg');
+    height: 100vh;
+    
+    .ant-card-body{
+        padding: 0;
+    }
+
+    @media (width <= $media-breackpoint-up-xl) {
+        padding: 80px 150px;
+    }
+    @media (width <= $media-breackpoint-up-lg) {
+        padding: 80px 40px;
+    }
+    @media (width <= $media-breackpoint-up-md){
+        padding: 80px 140px;
+    }
+    @media (width <= $media-breackpoint-up-sm) {
+        padding: 80px 40px;
+    }
+}
+
+.sign-in-content{
+    display: flex;
+    flex-direction: row;
+    .image-side{
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+        flex-basis: 50%;
+        background-image: url('/assets/img/jpg/vista-montaña.jpg');
+        background-size: cover;
+
+        @media (width <= $media-breackpoint-up-md) {
+            display: none;
+        }
+    }
+    .form-container{
+        flex-basis: 50%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 30px;
+        @media (width <= $media-breackpoint-up-md) {
+            flex-basis: 100%;
+            padding: 10px 10px;
+        }
+        
+        .ant-image{
+            width: 200px;
+            margin: 20px 0px;
+        }
+    }
+}
+

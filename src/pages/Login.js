@@ -1,39 +1,24 @@
-import { Button, Card, Form, Input, notification } from 'antd'
-import { useForm } from 'antd/es/form/Form'
+import { Card, Image, Layout } from 'antd'
+import { Content } from 'antd/es/layout/layout'
 import React from 'react'
+import LoginForm from '../components/forms/LoginForm'
+import LogoEleva from '../assets/logo';
 
-const Login = (props) => {
-    const [form] = useForm()
-    const submit = () => {
-        const body = form.getFieldsValue()
-        notification.success({
-            message: 'Información enviada'  
-        })
-        console.log("información enviada")
-        console.log(body)
-    }
+
+const Login = () => {
     return (
-        <div style={{
-            margin: '200px 300px',
-        }}>
-            <Card>
-                <Form form={form} onFinish={submit}>
-                    <Form.Item name="rut" label="RUT" rules={[{
-                        required: true,
-                        message: 'El rut es obligatorio'
-                    }]}>
-                        <Input placeholder='Ingresa RUT' />
-                    </Form.Item>
-                    <Form.Item name="password" label="Contraseña" rules={[{
-                        required: true,
-                        message: 'La contraseña es obligatoria'
-                    }]}>
-                        <Input.Password  placeholder='Contraseña'/>
-                    </Form.Item>
-                    <Button type='primary' block  htmlType='submit'>Ingresar</Button>
-                </Form>
-            </Card>
-        </div>
+      <Layout className="sign-in">
+        <Card bordered={false} className="sign-in-card">
+          <Content className="sign-in-content">
+            <div className="image-side" />
+            <div className="form-container">
+              {/* <Image src={LogoEleva} preview={false} /> */}
+              <h1>Home Care</h1>
+              <LoginForm />
+            </div>
+          </Content>
+        </Card>
+      </Layout>
         
     )
 }
