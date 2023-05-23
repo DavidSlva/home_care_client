@@ -31,6 +31,7 @@ const LayoutAdmin = (props) => {
         <Layout className='mt-16 md:ml-20'>
           <Content className=' p-5'>
             {props.children}
+           
           </Content>
           <Footer>Footer</Footer>
         </Layout>

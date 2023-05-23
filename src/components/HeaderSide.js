@@ -14,7 +14,7 @@ const HeaderSide = (props) => {
         </div>
         <div className="basis-2/5 text-right">
             <Space>
-                <p className='capitalize  text-gray-500 my-0 inline-block text-sm'> david silva</p>
+                <p className='capitalize  text-gray-500 my-0 inline-block text-sm'> TEST </p>
                 <Avatar/>
             </Space>
         </div>
