@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
+import { Space } from 'antd';
 const { Meta } = Card;
 const cards = [
   {
@@ -36,11 +37,11 @@ const cards = [
    
 ]
 const Home = () => (
-<Card  title="Panel de Administrador" style={{textAlign: 'center'}}>
-  <Row gutter={16}>
+
+  <Row gutter={16}> 
       {
         cards?.map((card) => (
-        <Col span={8}>
+        <Col span={8} className='card__col'>
         <Link to={card.enlace}>
         <Card className='card__hover'
               cover={
@@ -62,6 +63,6 @@ const Home = () => (
         ))
       }
   </Row>
-</Card>
+
 );
 export default Home;

@@ -29,7 +29,9 @@ const LayoutAdmin = (props) => {
           <MenuSider/>
         </Sider>
         <Layout className='mt-16 md:ml-20'>
-          <Content className=' p-5'>
+          <Content className=' p-5' style={{
+            backgroundImage: 'linear-gradient(35deg, #ffffff 0, #e3faff 50%, #c2e4ed 100%)'
+          }}>
             {props.children}
            
           </Content>
