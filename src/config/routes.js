@@ -4,6 +4,7 @@ import LayoutLogin from "../components/layouts/LayoutLogin";
 import Error404 from "../pages/Error404";
 import Home from "../pages/administrador/Home";
 import Perfil from "../pages/administrador/Perfil";
+import Test from "../pages/administrador/Test";
 
 const adminRoutes = [
     {
@@ -14,6 +15,11 @@ const adminRoutes = [
         path: '/perfil',
         layout:  LayoutAdmin,
         element: Perfil
+    },
+    {
+        path: '/test',
+        layout:  LayoutAdmin,
+        element: Test
     }
 ]
 const loginRoute = [
