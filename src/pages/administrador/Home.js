@@ -1,11 +1,13 @@
 import React from 'react'
 import { Card, Col, Row } from 'antd';
 import backgroundImage from '../../assets/img/jpg/pexels-johannes-plenio-1103970.jpg';
+import { Link } from 'react-router-dom';
 const { Meta } = Card;
 const App = () => (
 <Card  title="Panel de Administrador" style={{textAlign: 'center'}}>
   <Row gutter={16}>
     <Col span={8}>
+    <Link to='/Perfil'>
     <Card className='card__hover'
       cover={
         <img
@@ -14,13 +16,16 @@ const App = () => (
           style={{ objectFit: 'cover', height: '250px' }}
         />
       }
+      
     >
+   
     <Meta
       style={{textAlign: 'center'}}
       title="Administrar Personal de Salud"
       description="Agregar/Eliminar Personal"
     />
     </Card>
+    </Link>
     </Col>
     <Col span={8}>
     <Card className='card__hover'
