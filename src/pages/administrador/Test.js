@@ -1,5 +1,3 @@
-import { Card, Image, Layout } from 'antd'
-import { Content } from 'antd/es/layout/layout'
 import React from 'react'
 
 

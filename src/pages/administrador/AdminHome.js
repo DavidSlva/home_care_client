@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
-import { Space } from 'antd';
 const { Meta } = Card;
 const cards = [
   {
@@ -36,7 +35,7 @@ const cards = [
   }
    
 ]
-const Home = () => (
+const AdminHome = () => (
 
   <Row gutter={16}> 
       {
@@ -63,6 +62,6 @@ const Home = () => (
         ))
       }
   </Row>
-
+  
 );
-export default Home;
+export default AdminHome;

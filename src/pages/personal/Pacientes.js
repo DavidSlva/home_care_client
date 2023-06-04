@@ -97,7 +97,7 @@ for (let i = 0; i < 10; i++) {
     ocupacion: "Estudiante",
   });
 }
-const App = () => (
+const Pacientes = () => (
   <Card title="Panel de Trabajo" style={{textAlign: 'center'}}>
     <Card title="Lista de Pacientes" style={{textAlign: 'center'}}>
     <Table
@@ -114,4 +114,4 @@ const App = () => (
 
 );
 
-export default App;
+export default Pacientes;
