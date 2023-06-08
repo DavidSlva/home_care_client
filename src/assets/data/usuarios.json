@@ -1,0 +1,31 @@
+[
+    {
+        "rut": "19688147-6",
+        "pass": "1234",
+        "nombre": "Pablo",
+        "type": "Admin",
+        "especialidad": "Administrador"
+    },
+    {
+        "rut": "20123456-7",
+        "pass": "4321",
+        "nombre": "Cesar",
+        "type": "Especialista",
+        "especialidad": "Kinesiologo"
+    },
+    {
+        "rut": "12345678-9",
+        "pass": "11234",
+        "nombre": "Alien",
+        "type": "Especialista",
+        "especialidad": "Enfermero"
+    },
+    {
+        "rut": "19123478-9",
+        "pass": "2468",
+        "nombre": "Planta",
+        "type": "Paciente",
+        "especialidad": "Paciente"
+    }
+]
+

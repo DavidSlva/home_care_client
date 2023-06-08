@@ -2,13 +2,31 @@ import { Button, Form, Input } from 'antd'
 import { useForm } from 'antd/es/form/Form'
 import React from 'react'
 import { rutValidator } from '../../utils/validators'
-
+import usuarios from '../../assets/data/usuarios.json'
+import { notification } from 'antd'
 const LoginForm = () => {
     const [form] = useForm()
 
     const finishForm = async () => {
         const values = form.getFieldsValue();
         console.log(values);
+        const usuario = usuarios.find((usuario) => usuario.rut === values.rut);
+        if (!usuario){
+            notification.warning({ message: 'Usuario no encontrado' });
+            return;
+        }
+        if (usuario.pass !== values.password){
+            notification.warning({ message: 'Contraseña incorrecta' });
+            return;
+        }
+        if(usuario.type == "Admin"){
+            window.location.href = '/admin';
+            return;
+        }
+        if(usuario.type == "Especialista"){
+            window.location.href = '/especialista';
+            return;
+        }
         // const loginApiResult = await loginUserApi({
         //     url: 'sign-in',
         //     body: values,
