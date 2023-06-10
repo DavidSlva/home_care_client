@@ -1,0 +1,22 @@
+const objetoJSON = {
+    nombre: 'TETO',
+    apellido: 'Toreto',
+    rut: '12312313',
+    edad: '20',    
+    estadoCivil: 'soltero',
+    diagnostico: 'cancer',
+    nombreDeFamiliar: 'robertita',
+    Expectativas_y_percepcion: ' vivira',
+    ImpresionInicialDeEntrevista : 'meas tetas',
+    Alergias: 'polen',
+    ObjetivoGeneral : 'Sobrevivir al cancer',     
+    Horario: [
+      'fecha atencion',
+      'acciones delegadas',
+      'acciones pertinentes',
+      'fecha de atencion siguiente',
+      'hora'
+    ],
+    Dieta: 'come y calla',
+    Fecha: '2222222'
+  };

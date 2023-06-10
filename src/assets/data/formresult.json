@@ -1,0 +1,24 @@
+[
+    {
+        "nombre": " ",
+        "apellido": " ",
+        "rut": " ",
+        "edad": " ", 
+        "estadoCivil": " ",
+        "diagnostico": " ",
+        "nombreDeFamiliar": " ",
+        "Expectativas_y_percepcion": " ",
+        "ImpresionInicialDeEntrevista": " ",
+        "Alergias": " ",
+        "ObjetivoGeneral": " ",   
+        "Horario" : [
+            " ", 
+            " ",
+            " ",
+            " ",
+            " "
+        ],
+        "Dieta": " ",
+        "Fecha": " "
+    } 
+]
