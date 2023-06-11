@@ -34,9 +34,19 @@ const FormTest = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData);
+    const response = await fetch('http://localhost:8000/api/v1/solicitud/ingresa',
+    {method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+    })
+    console.log(response);
+    
+    alert('Formulario enviado con éxito');
     setFormData({
       nombre: '',
       apellido: '',
