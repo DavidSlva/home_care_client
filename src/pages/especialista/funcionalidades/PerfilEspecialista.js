@@ -1,12 +1,12 @@
 import React from 'react'
-import FormAnt from '../../../components/forms/FormAnt'
+import FormATMED from '../../../components/forms/FormATMED'
 
 
 
 const PerfilEspecialista = () => {
 
     return (
-        <FormAnt/>
+        <FormATMED/>
         // <div>Menú de Especialista</div>
     )
       
