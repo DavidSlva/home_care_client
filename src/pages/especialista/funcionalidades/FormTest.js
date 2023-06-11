@@ -3,19 +3,27 @@ import './FormTest.css';
 
 const FormTest = () => {
   const [formData, setFormData] = useState({
-    nombres: '',
-    apellidos: '',
+    nombre: '',
+    apellido: '',
     rut: '',
     edad: '',
     lugarNacimiento: '',
     sexo: '',
     estadoCivil: '',
     profesionOficio: '',
-    diagnosticoActual: '',
-    nombreFamiliar: '',
-    expectativasPercepcion: '',
-    impresionEntrevistador: '',
-    alergias: '',
+    diagnostico: '',
+    nombreDeFamiliar: '',
+    Expectativas_y_Percepcion: '',
+    ImpresionInicialDeEntrevista: '',
+    Alergias: '',
+    ObjetivoGeneral: '',
+    FechaAtencion: '', 
+    AccionesDelegadas: '',
+    AccionesPertinentes: '',
+    FechadeAtencionSiguiente: '',
+    Hora: '',
+    Dieta: '',
+    Fecha: ''
   });
 
   const handleInputChange = (event) => {
@@ -30,44 +38,52 @@ const FormTest = () => {
     event.preventDefault();
     console.log(formData);
     setFormData({
-      nombres: '',
-      apellidos: '',
+      nombre: '',
+      apellido: '',
       rut: '',
       edad: '',
       lugarNacimiento: '',
       sexo: '',
       estadoCivil: '',
       profesionOficio: '',
-      diagnosticoActual: '',
-      nombreFamiliar: '',
-      expectativasPercepcion: '',
-      impresionEntrevistador: '',
-      alergias: '',
+      diagnostico: '',
+      nombreDeFamiliar: '',
+      Expectativas_y_Percepcion: '',
+      ImpresionInicialDeEntrevista: '',
+      Alergias: '',
+      ObjetivoGeneral: '',
+      FechaAtencion: '', 
+      AccionesDelegadas: '',
+      AccionesPertinentes: '',
+      FechadeAtencionSiguiente: '',
+      Hora: '',
+      Dieta: '',
+      Fecha: ''
     });
   };
 
   return (
     <div className="form-container">
-      <h2>Formulario de Atenciones Médicas</h2>
+     <center>  <h2>Formulario de Atenciones Médicas</h2> </center>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="nombres">Nombres:</label>
+          <label htmlFor="nombre">Nombre:</label>
           <input
             type="text"
-            id="nombres"
-            name="nombres"
-            value={formData.nombres}
+            id="nombre"
+            name="nombre"
+            value={formData.nombre}
             onChange={handleInputChange}
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="apellidos">Apellidos:</label>
+          <label htmlFor="apellido">Apellido:</label>
           <input
             type="text"
-            id="apellidos"
-            name="apellidos"
-            value={formData.apellidos}
+            id="apellido"
+            name="apellido"
+            value={formData.apellido}
             onChange={handleInputChange}
           />
         </div>
@@ -148,55 +164,139 @@ const FormTest = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="diagnosticoActual">Diagnóstico Actual:</label>
+          <label htmlFor="diagnostico">Diagnóstico Actual:</label>
           <textarea
-            id="diagnosticoActual"
-            name="diagnosticoActual"
-            value={formData.diagnosticoActual}
+            id="diagnostico"
+            name="diagnostico"
+            value={formData.diagnostico}
             onChange={handleInputChange}
           ></textarea>
         </div>
 
         <div className="form-group">
-          <label htmlFor="nombreFamiliar">Nombre de Familiar:</label>
+          <label htmlFor="nombreDeFamiliar">Nombre de Familiar:</label>
           <input
             type="text"
-            id="nombreFamiliar"
-            name="nombreFamiliar"
-            value={formData.nombreFamiliar}
+            id="nombreDeFamiliar"
+            name="nombreDeFamiliar"
+            value={formData.nombreDeFamiliar}
             onChange={handleInputChange}
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="expectativasPercepcion">Expectativas y Percepción:</label>
+          <label htmlFor="Expectativas_y_Percepcion">Expectativas y Percepción:</label>
           <textarea
-            id="expectativasPercepcion"
-            name="expectativasPercepcion"
-            value={formData.expectativasPercepcion}
+            id="Expectativas_y_Percepcion"
+            name="Expectativas_y_Percepcion"
+            value={formData.Expectativas_y_Percepcion}
             onChange={handleInputChange}
           ></textarea>
         </div>
 
         <div className="form-group">
-          <label htmlFor="impresionEntrevistador">Impresión inicial del Entrevistador:</label>
+          <label htmlFor="ImpresionInicialDeEntrevista">Impresión inicial del Entrevistador:</label>
           <textarea
-            id="impresionEntrevistador"
-            name="impresionEntrevistador"
-            value={formData.impresionEntrevistador}
+            id="ImpresionInicialDeEntrevista"
+            name="ImpresionInicialDeEntrevista"
+            value={formData.ImpresionInicialDeEntrevista}
             onChange={handleInputChange}
           ></textarea>
         </div>
 
         <div className="form-group">
-          <label htmlFor="alergias">Alergias:</label>
+          <label htmlFor="Alergias">Alergias:</label>
           <textarea
-            id="alergias"
-            name="alergias"
-            value={formData.alergias}
+            id="Alergias"
+            name="Alergias"
+            value={formData.Alergias}
             onChange={handleInputChange}
           ></textarea>
         </div>
+
+        <div className="form-group">
+          <label htmlFor="ObjetivoGeneral">Objetivo General:</label>
+          <input
+            type="text"
+            id="ObjetivoGeneral"
+            name="ObjetivoGeneral"
+            value={formData.ObjetivoGeneral}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="Dieta">Dieta:</label>
+          <input
+            type="text"
+            id="Dieta"
+            name="Dieta"
+            value={formData.Dieta}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="Fecha">Fecha:</label>
+          <input
+            type="date"
+            id="Fecha"
+            name="Fecha"
+            value={formData.Fecha}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div> 
+          <h2>Horario</h2>
+        </div> 
+        <div className="form-group">
+          <label htmlFor="FechaAtencion">Fecha de Atencion:</label>
+          <input
+            type="date"
+            id="FechaAtencion"
+            name="FechaAtencion"
+            value={formData.FechaAtencion} 
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="AccionesDelegadas">Acciones Delegadas:</label>
+          <input
+            type="text"
+            id="AccionesDelegadas"
+            name="AccionesDelegadas"
+            value={formData.AccionesDelegadas}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="AccionesPertinentes">Acciones Pertinentes:</label>
+          <input
+            type="text"
+            id="AccionesPertinentes"
+            name="AccionesPertinentes"
+            value={formData.AccionesPertinentes}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="FechadeAtencionSiguiente">Fechade Atencion Siguiente:</label>
+          <input
+            type="date"
+            id="FechadeAtencionSiguiente"
+            name="FechadeAtencionSiguiente"
+            value={formData.FechadeAtencionSiguiente}
+            onChange={handleInputChange}
+          />
+        </div> 
+        <div className="form-group">
+          <label htmlFor="Hora">Hora:</label>
+          <input
+            type="time"
+            id="Hora"
+            name="Hora"
+            value={formData.Hora}
+            onChange={handleInputChange}
+          />
+        </div> 
 
         <button type="submit">Guardar</button>
       </form>
