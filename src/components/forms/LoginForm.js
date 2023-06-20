@@ -19,11 +19,11 @@ const LoginForm = () => {
             notification.warning({ message: 'Contraseña incorrecta' });
             return;
         }
-        if(usuario.type == "Admin"){
+        if(usuario.type === "Admin"){
             window.location.href = '/admin';
             return;
         }
-        if(usuario.type == "Especialista"){
+        if(usuario.type === "Especialista"){
             window.location.href = '/especialista';
             return;
         }
