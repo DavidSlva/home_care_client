@@ -10,12 +10,6 @@ const cards = [
     enlace: "/admin/test"
   },
   {
-    title: 'Ver Personal de Salud Actual',
-    description: 'Horarios, registros, contacto, etc',
-    img: "https://cindercapacitacion.com/wp-content/uploads/2022/07/cursos-para-trabajadores-de-la-salud-1.jpg",
-    enlace: "/admin/personal"
-  },
-  {
     title: 'Ver Pacientes',
     description: 'Ver registro de pacientes actuales',
     img: "https://www.promedco.com/images/NOTICIAS_2020/comodidad-del-paciente-1.jpg",

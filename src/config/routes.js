@@ -13,6 +13,7 @@ import EspecialistaHome from "../pages/especialista/EspecialistaHome";
 import AgendaEspecialista from "../pages/especialista/funcionalidades/AgendaEspecialista";
 import CrearForm from "../pages/especialista/funcionalidades/CrearForm";
 import FormTest from "../pages/especialista/funcionalidades/FormTest";
+import AgregarEspecialista from "../pages/administrador/funcionalidades/AgregarEspecialista";
 
 const adminRoutes = [ //rutas del administrador
     {
@@ -47,6 +48,11 @@ const adminFXRoutes = [ //rutas de funciones de administrador
         path: '/admin/test',
         layout:  LayoutAdmin,
         element: Test
+    },
+    {
+        path: '/admin/agregarespecialista',
+        layout:  LayoutAdmin,
+        element: AgregarEspecialista
     }
 
 ]

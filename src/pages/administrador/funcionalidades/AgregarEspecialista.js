@@ -43,7 +43,7 @@ const Datos = [
         placeholder: 'Ingrese Lugar donde Nació'
     },
     {
-        tipo:'Select',
+        tipo: 'Select',
         label: 'Sexo',
         name: 'sexo',
         type: 'string',
@@ -188,7 +188,7 @@ const Datos = [
     }
 
 ]
-const TituloForm = 'Formulario de Atenciones Médicas'
+const TituloForm = 'Agregar Especialista'
 
 
 const CrearForm = () => {
