@@ -7,7 +7,7 @@ const cards = [
     title: 'Administrar Personal de Salud',
     description: 'Agregar/Eliminar Personal',
     img: "https://www.uchile.cl/.imaging/stk/uchile/nav-lateral-ancho/dam/imagenes/Salud-publica/imagenes-noticias/162548_1_personal-sanitario_L/jcr:content/personal-sanitario.jpg.jpg",
-    enlace: "/admin/test"
+    enlace: "/admin/AdminPersonal"
   },
   {
     title: 'Ver Pacientes',
