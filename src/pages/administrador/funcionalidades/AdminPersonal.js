@@ -1,5 +1,7 @@
 import React from 'react';
 import Listadinamica from '../../../components/lists/Listadinamica.js';
+import './AdminPersonal.css';
+
 const columns = [
   {
     title: 'RUT',
@@ -13,14 +15,12 @@ const columns = [
     width: 60,
     dataIndex: 'nombre',
     key: 'name',
-    //fixed: 'left',
   },
   {
     title: 'Apellido',
     width: 60,
     dataIndex: 'apellido',
     key: 'apellido',
-    //fixed: 'left',
   },
   {
     title: 'Especialidad',
@@ -40,7 +40,7 @@ const columns = [
     key: '2',
     width: 50,
   },
-  {    
+  {
     title: 'Email',
     dataIndex: 'email',
     key: '3',
@@ -61,6 +61,7 @@ const columns = [
     render: () => <a>Eliminar</a>,
   },
 ];
+
 const data = [];
 for (let i = 0; i < 10; i++) {
   data.push({
@@ -70,21 +71,27 @@ for (let i = 0; i < 10; i++) {
     especialidad: `Kinesiología`,
     rut: `12345678-${i}`,
     telefono: `+569${i}${i}${i}75043`,
-    email: "test@test.com",
-    sexo: "M",
+    email: 'test@test.com',
+    sexo: 'M',
   });
 }
-const title = "Personal Actual"
-const boton = "Agregar Personal"
-const enlace = "/admin/agregarespecialista"
+
+const title = 'Personal Actual';
+const boton = 'Agregar Personal';
+const enlace = '/admin/agregarespecialista';
+
 const AdminPersonal = () => {
-  return(
+  return (
     <div>
-      <Listadinamica columns={columns} data={data} title={title} boton={boton} enlace={enlace}/>
+      <h2>{title}</h2>
+      <div className="table-container">
+        <Listadinamica columns={columns} data={data} />
+      </div>
+      <a href={enlace} className="add-button">
+        {boton}
+      </a>
     </div>
   );
-}
+};
 
 export default AdminPersonal;
-
-
