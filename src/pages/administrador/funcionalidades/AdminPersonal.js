@@ -1,6 +1,6 @@
 import React from 'react';
 import Listadinamica from '../../../components/lists/Listadinamica.js';
-import './AdminPersonal.css';
+
 
 const columns = [
   {
@@ -85,11 +85,8 @@ const AdminPersonal = () => {
     <div>
       <h2>{title}</h2>
       <div className="table-container">
-        <Listadinamica columns={columns} data={data} />
+        <Listadinamica columns={columns} data={data} boton={boton} enlace={enlace} />
       </div>
-      <a href={enlace} className="add-button">
-        {boton}
-      </a>
     </div>
   );
 };

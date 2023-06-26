@@ -74,7 +74,7 @@ for (let i = 0; i < 10; i++) {
     sexo: "M",
   });
 }
-const title = "Pacientes"
+const title =" Lista de Pacientes"
 const boton = "Agregar Paciente"
 const enlace = "/admin/agregarpaciente"
 const AdminPacientes = () => {

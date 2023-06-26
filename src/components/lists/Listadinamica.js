@@ -1,6 +1,6 @@
 import { Table } from 'antd';
 import React from 'react';
-import { Card , Button } from 'antd';
+import { Card , Button, Space} from 'antd';
 import { Link } from 'react-router-dom';
 
 const Listadinamica = (props) => {
@@ -20,7 +20,9 @@ const Listadinamica = (props) => {
             }}
         />
         <Link to={enlace}>
-        <Button>{boton}</Button>
+        <Space wrap>
+            <Button type="primary">{boton}</Button>
+        </Space>
         </Link>
         </Card>
     
