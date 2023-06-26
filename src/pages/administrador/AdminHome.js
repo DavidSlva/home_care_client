@@ -13,7 +13,7 @@ const cards = [
     title: 'Ver Pacientes',
     description: 'Ver registro de pacientes actuales',
     img: "https://www.promedco.com/images/NOTICIAS_2020/comodidad-del-paciente-1.jpg",
-    enlace: "/login"
+    enlace: "/admin/AdminPacientes"
   },
   {
     title: 'Generador de Horarios',

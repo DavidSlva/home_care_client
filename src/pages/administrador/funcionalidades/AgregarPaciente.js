@@ -188,10 +188,10 @@ const Datos = [
     }
 
 ]
-const TituloForm = 'Agregar Especialista'
+const TituloForm = 'Agregar Paciente'
 
 
-const AgregarEspecialista = () => {
+const AgregarPaciente = () => {
 
     return (
         <FormDinamico datos={Datos} title={TituloForm}/>  
@@ -200,4 +200,4 @@ const AgregarEspecialista = () => {
 }
 /* si usuario == sicologo -> Datos == DatosSicologo.*/
 
-export default AgregarEspecialista
+export default AgregarPaciente

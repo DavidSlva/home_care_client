@@ -14,6 +14,8 @@ import AgendaEspecialista from "../pages/especialista/funcionalidades/AgendaEspe
 import CrearForm from "../pages/especialista/funcionalidades/CrearForm";
 import FormTest from "../pages/especialista/funcionalidades/FormTest";
 import AgegarEspecialista from "../pages/administrador/funcionalidades/AgregarEspecialista";
+import AdminPacientes from "../pages/administrador/funcionalidades/AdminPacientes";
+import AgregarPaciente from "../pages/administrador/funcionalidades/AgregarPaciente";
 
 const adminRoutes = [ //rutas del administrador
     {
@@ -35,9 +37,9 @@ const adminFXRoutes = [ //rutas de funciones de administrador
         element: Schedule
     },
     {
-        path: '/admin/personal',
+        path: '/admin/AdminPacientes',
         layout:  LayoutAdmin,
-        element: AdminPersonal
+        element: AdminPacientes
     },
     {
         path: '/admin/finanzas',
@@ -58,6 +60,11 @@ const adminFXRoutes = [ //rutas de funciones de administrador
         path: '/admin/agregarespecialista',
         layout:  LayoutAdmin,
         element: AgegarEspecialista
+    },
+    {
+        path: '/admin/agregarpaciente',
+        layout:  LayoutAdmin,
+        element: AgregarPaciente
     }
 
 
