@@ -14,6 +14,8 @@ import AgendaEspecialista from "../pages/especialista/funcionalidades/AgendaEspe
 import CrearForm from "../pages/especialista/funcionalidades/CrearForm";
 import FormTest from "../pages/especialista/funcionalidades/FormTest";
 import AgegarEspecialista from "../pages/administrador/funcionalidades/AgregarEspecialista";
+import AdminPacientes from "../pages/administrador/funcionalidades/AdminPacientes";
+import AgregarPaciente from "../pages/administrador/funcionalidades/AgregarPaciente";
 
 const adminRoutes = [ //rutas del administrador
     {
@@ -29,36 +31,42 @@ const adminRoutes = [ //rutas del administrador
 
 ]
 const adminFXRoutes = [ //rutas de funciones de administrador
-    {
-        path: '/admin/schedule',
-        layout:  LayoutAdmin,
-        element: Schedule
-    },
-    {
-        path: '/admin/personal',
-        layout:  LayoutAdmin,
-        element: AdminPersonal
-    },
-    {
-        path: '/admin/finanzas',
-        layout:  LayoutAdmin,
-        element: Finanzas
-    },
-    {
-        path: '/admin/test',
-        layout:  LayoutAdmin,
-        element: Test
-    },
-    {
-        path: '/admin/adminpersonal',
-        layout:  LayoutAdmin,
-        element: AdminPersonal
-    },
-    {
-        path: '/admin/agregarespecialista',
-        layout:  LayoutAdmin,
-        element: AgegarEspecialista
-    }
+{
+    path: '/admin/schedule',
+    layout:  LayoutAdmin,
+    element: Schedule
+},
+{
+    path: '/admin/AdminPacientes',
+    layout:  LayoutAdmin,
+    element: AdminPacientes
+},
+{
+    path: '/admin/finanzas',
+    layout:  LayoutAdmin,
+    element: Finanzas
+},
+{
+    path: '/admin/test',
+    layout:  LayoutAdmin,
+    element: Test
+},
+{
+    path: '/admin/adminpersonal',
+    layout:  LayoutAdmin,
+    element: AdminPersonal
+},
+{
+    path: '/admin/agregarespecialista',
+    layout:  LayoutAdmin,
+    element: AgegarEspecialista
+},
+{
+    path: '/admin/agregarpaciente',
+    layout:  LayoutAdmin,
+    element: AgregarPaciente
+}
+
 
 
 ]
