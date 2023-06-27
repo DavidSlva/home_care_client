@@ -1,81 +1,64 @@
-import { Table } from 'antd';
 import React from 'react';
-import { Card } from 'antd';
+import Listadinamica from '../../../components/lists/Listadinamica.js';
 const columns = [
   {
-    title: 'Nombre Completo',
-    width: 100,
+    title: 'RUT',
+    width: 40,
+    dataIndex: 'rut',
+    key: 'rut',
+    fixed: 'left',
+  },
+  {
+    title: 'Nombre',
+    width: 60,
     dataIndex: 'nombre',
     key: 'name',
-    fixed: 'left',
+    //fixed: 'left',
   },
   {
-    title: 'Edad',
-    width: 100,
-    dataIndex: 'edad',
-    key: 'age',
-    fixed: 'left',
+    title: 'Apellido',
+    width: 60,
+    dataIndex: 'apellido',
+    key: 'apellido',
+    //fixed: 'left',
   },
   {
-    title: 'Direccion',
-    dataIndex: 'direccion',
-    key: '1',
-    width: 150,
-  },
-  {
-    title: 'Servicio Solicitado',
-    dataIndex: 'servicio',
-    key: '2',
-    width: 150,
-  },
-  {
-    title: 'Fecha de Visita',
-    dataIndex: 'fecha',
-    key: '3',
-    width: 150,
-  },
-  {
-    title: 'Hora de Visita',
-    dataIndex: 'hora',
-    key: '4',
-    width: 150,
-  },
-  {
-    title: 'Antecedentes médicos',
-    dataIndex: 'text',
-    key: '5',
-    width: 150,
+    title: 'Diagnostico',
+    width: 60,
+    dataIndex: 'diagnostico',
+    key: 'diagnostico',
   },
   {
     title: 'Sexo',
     dataIndex: 'sexo',
-    key: '6',
-    width: 100,
+    key: '1',
+    width: 30,
   },
   {
-    title: 'Rut',
-    dataIndex: 'rut',
-    key: '7',
-    width: 150,
+    title: 'Telefono',
+    dataIndex: 'telefono',
+    key: '2',
+    width: 50,
+  },
+  {    
+    title: 'Email',
+    dataIndex: 'email',
+    key: '3',
+    width: 40,
   },
   {
-    title: 'Prevision',
-    dataIndex: 'prevision',
-    key: '8',
-    width: 150,
-  },
-  {
-    title: 'Ocupacion',
-    dataIndex: 'ocupacion',
-    key: '8',
-    width: 150,
-  },
-  {
-    title: 'Estado',
+    title: 'Detalles',
     key: 'operation',
     fixed: 'right',
-    width: 100,
-    render: () => <a>Aceptar</a>,
+    width: 30,
+    render: () => <a>Detalles</a>,
+  },
+  {
+    title: 'Eliminar',
+    key: 'operation',
+    fixed: 'right',
+    width: 30,
+    render: () => <a>Eliminar</a>,
   },
 ];
 const data = [];
@@ -83,35 +66,23 @@ for (let i = 0; i < 10; i++) {
   data.push({
     key: i,
     nombre: `Eugenio ${i}`,
-    edad: 32,
-    direccion: `Ejército ${i}`,
-    servicio: 'Kinesiología',
-    fecha: "2000-01-01",
-    hora: "15:00",
-    text: "Sin Antecedentes",
-    numero: "123456789",
+    apellido: `Gonzalez ${i}`,
+    diagnostico: `Esquizofrenia`,
+    rut: `12345678-${i}`,
+    telefono: `+569${i}${i}${i}75043`,
     email: "test@test.com",
-    rut: "123456789",
-    prevision: "Fonasa",
-    sexo: "F",
-    ocupacion: "Estudiante",
+    sexo: "M",
   });
 }
-const Pacientes = () => (
-  <Card title="Panel de Trabajo" style={{textAlign: 'center'}}>
-    <Card title="Lista de Pacientes" style={{textAlign: 'center'}}>
-    <Table
-    columns={columns}
-    dataSource={data}
-    scroll={{
-      x: 1500,
-      y: 300,
-    }}
-    />
-    </Card>
-  </Card>
-  
-
-);
+const title =" Lista de Pacientes"
+const boton = "Actualizar"
+const enlace = "/especialista/pacientes"
+const Pacientes = () => {
+  return(
+    <div>
+      <Listadinamica columns={columns} data={data} title={title} boton={boton} enlace={enlace}/>
+    </div>
+  );
+}
 
 export default Pacientes;
