@@ -4,39 +4,51 @@ import React from 'react'
 import { rutValidator } from '../../utils/validators'
 import usuarios from '../../assets/data/usuarios.json'
 import { notification } from 'antd'
+import { getApi, postApi } from '../../api'
+
 const LoginForm = () => {
     const [form] = useForm()
 
     const finishForm = async () => {
-        const values = form.getFieldsValue();
-        console.log(values);
-        const usuario = usuarios.find((usuario) => usuario.rut === values.rut);
-        if (!usuario){
-            notification.warning({ message: 'Usuario no encontrado' });
-            return;
+        try {
+            const values = form.getFieldsValue();
+            const response = await postApi('/auth/login', values)
+            const { data } = response
+
+            let usuario = data.usuario
+
+            // if(response.data)
+            // console.log(response);
+            
+
+            if (!usuario){
+                notification.warning({ message: 'Usuario no encontrado' });
+                return;
+            }
+            if(usuario.type === "administrador"){
+                localStorage.setItem('user', JSON.stringify(usuario))
+                window.location.href = '/admin';
+                return;
+            }
+            if(usuario.type === "especialista"){
+                localStorage.setItem('user', JSON.stringify(usuario))
+                window.location.href = '/especialista';
+                return;
+            }
+            notification.error({message: 'Error fatal'})
+            // const loginApiResult = await loginUserApi({
+            //     url: 'sign-in',
+            //     body: values,
+            // });
+            // if (notificationApi(loginApiResult)) {
+            //     form.resetFields();
+            //     localStorage.setItem(ACCESS_TOKEN, loginApiResult.accessToken);
+            //     localStorage.setItem(REFRESH_TOKEN, loginApiResult.refreshToken);
+            //     window.location.href = '/';
+            // }
+        } catch (error) {
+            
         }
-        if (usuario.pass !== values.password){
-            notification.warning({ message: 'Contraseña incorrecta' });
-            return;
-        }
-        if(usuario.type === "Admin"){
-            window.location.href = '/admin';
-            return;
-        }
-        if(usuario.type === "Especialista"){
-            window.location.href = '/especialista';
-            return;
-        }
-        // const loginApiResult = await loginUserApi({
-        //     url: 'sign-in',
-        //     body: values,
-        // });
-        // if (notificationApi(loginApiResult)) {
-        //     form.resetFields();
-        //     localStorage.setItem(ACCESS_TOKEN, loginApiResult.accessToken);
-        //     localStorage.setItem(REFRESH_TOKEN, loginApiResult.refreshToken);
-        //     window.location.href = '/';
-        // }
     };
   return (
     <Form form={form} className="login-form form" onFinish={finishForm}>

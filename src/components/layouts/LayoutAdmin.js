@@ -8,6 +8,15 @@ import { colors } from '../../assets/styles/colors'
 
 const LayoutAdmin = (props) => {
   const [hidden, setHidden] = useState(true);
+  let user = localStorage.getItem('user')
+    user = JSON.parse(user)
+  if(!user){
+    window.location.href = '/login'
+    return
+  }
+  // Para deslogear
+  // localStorage.clear()
+  // window.location.href = '/login'
 
   return (
     <ConfigProvider theme={{  
