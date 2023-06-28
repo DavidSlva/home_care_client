@@ -2,7 +2,6 @@ import { Button, Form, Input } from 'antd'
 import { useForm } from 'antd/es/form/Form'
 import React from 'react'
 import { rutValidator } from '../../utils/validators'
-import usuarios from '../../assets/data/usuarios.json'
 import { notification } from 'antd'
 import { getApi, postApi } from '../../api'
 

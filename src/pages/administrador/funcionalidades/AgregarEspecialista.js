@@ -81,7 +81,7 @@ const Datos = [
 ]
 const TituloForm = 'Agregar Especialista'
 const Atajar = '/Perfil/Especialista/crear'
-const Redireccionar = '/especialista/pacientes'
+const Redireccionar = '/admin/agregarespecialista'
 
 const AgregarEspecialista = () => {
 
