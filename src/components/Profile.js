@@ -1,7 +1,16 @@
 import React from 'react';
-import './PerfilEspecialista.css';
+import './../assets/styles/components/Profile.css';
 
-const PerfilEspecialista = () => {
+const Profile = (props) => {
+  const Mail = props.mail
+  const Nombre = props.nombre
+  const Rut = props.rut
+  const Especialidad = props.cargo
+  //const Sexo = props.sexo
+  const Telefono = props.telefono
+  const Edad = props.edad
+  const Direccion = props.direccion
+
   return (
     <div className="perfil-especialista">
       <h2>Perfil de Especialista</h2>
@@ -18,23 +27,35 @@ const PerfilEspecialista = () => {
         </div>
         <div className="info-item">
           <label className="info-label">Nombre:</label>
-          <span className="info-text">Dr. Juan Duarte</span>
+          <span className="info-text">{Nombre}</span>
         </div>
         <div className="info-item">
           <label className="info-label">RUT:</label>
-          <span className="info-text">19.794.559-1</span>
+          <span className="info-text">{Rut}</span>
         </div>
         <div className="info-item">
           <label className="info-label">Especialidad:</label>
-          <span className="info-text">Kinesiología</span>
+          <span className="info-text">{Especialidad}</span>
         </div>
         <div className="info-item">
+          <label className="info-label">Edad:</label>
+          <span className="info-text">{Edad}</span>
+        </div>
+        {/* <div className="info-item">
           <label className="info-label">Sexo:</label>
-          <span className="info-text">H</span>
+          <span className="info-text">{Sexo}</span>
+        </div> */}
+        <div className="info-item">
+          <label className="info-label">Direccion:</label>
+          <span className="info-text">{Direccion}</span>
         </div>
         <div className="info-item">
           <label className="info-label">Telefono:</label>
-          <span className="info-text">+56 9 5616 1791</span>
+          <span className="info-text">{Telefono}</span>
+        </div>
+        <div className="info-item">
+          <label className="info-label">Correo:</label>
+          <span className="info-text">{Mail}</span>
         </div>
         {/* Resto de la información */}
       </div>
@@ -42,4 +63,4 @@ const PerfilEspecialista = () => {
   );
 };
 
-export default PerfilEspecialista;
+export default Profile;
