@@ -1,21 +1,54 @@
-import { Button, DatePicker,TimePicker, Form, Input, InputNumber, Select } from 'antd'
+import { Button, DatePicker,TimePicker, Form, Input, InputNumber, Select, } from 'antd'
 import { useForm } from 'antd/es/form/Form'
 import React from 'react'
 import '../../assets/styles/components/Form.css'
 import '../../pages/especialista/funcionalidades/FormTest.css'
+import { postApi } from '../../api'
+import { notification } from 'antd'
+
+
+
+// ACA
 
 const { Option } = Select;
 
 const FormDinamico = (props) => {
     const [form] = useForm()
+    
     const Datos = props.datos
     const Title = props.title
+    const Atajar = props.atajar
+    const Redireccionar = props.redireccionar
 
-    const handleSubmit = () => {
+
+    const handleSubmit = async () => {
         const values = form.getFieldsValue()
-        console.log(values);
-
-      };
+        const response = await postApi(Atajar, values)
+        const { data } = response
+        const { status, err } = data
+        if(status === 'success'){
+            notification.success({
+                message:' Inserción exitosa'
+            })
+            if(Redireccionar){
+                window.location.href = Redireccionar  
+            }
+            
+        }else{
+            notification.success({
+                message:`Error en el servidor: ${err}`
+            })
+        }
+    };
+    // return (
+    //     <div>
+    //         {pacientes.map((paciente) => {
+    //             <Card>
+    //                 {console.log(paciente)}
+    //             </Card>
+    //         })}
+    //     </div>
+    // )
     
     return(
     
@@ -47,18 +80,19 @@ const FormDinamico = (props) => {
                     } else if (data.tipo === 'DatePicker') {
                         return (
                             <Form.Item
-                            className='form-group'
-                            key={index}
-                            label={data.label}
-                            name={data.name}
-                            rules={[
-                                {
-                                    type: data.type,// ['string', 'number', 'boolean', 'regexp', 'integer', 'float', 'array', 'object', 'enum', 'date', 'url', 'hex', 'email'
+                                className='form-group'
+                                key={index}
+                                label={data.label}
+                                name={data.name}
+                                rules={[
+                                    {
+                                    type: data.type,
                                     required: data.required,
-                                    message: data.message
-                                }
-                            ]}>
-                                <DatePicker placeholder={data.placeholder} />
+                                    message: data.message,
+                                    },
+                                ]}
+                            >
+                                <DatePicker format="YYYY/MM/DD" placeholder={data.placeholder} />
                             </Form.Item>
                         );
                     } else if (data.tipo === 'TimePicker') {
@@ -93,6 +127,23 @@ const FormDinamico = (props) => {
                                 }
                             ]}>
                                 <InputNumber placeholder={data.placeholder} />
+                            </Form.Item>
+                        );
+                    } else if (data.tipo === 'Password') {
+                        return (
+                            <Form.Item
+                            className='form-group'
+                            key={index}
+                            label={data.label}
+                            name={data.name}
+                            rules={[
+                                {
+                                    type: data.type,// ['string', 'number', 'boolean', 'regexp', 'integer', 'float', 'array', 'object', 'enum', 'date', 'url', 'hex', 'email'
+                                    required: data.required,
+                                    message: data.message
+                                }
+                            ]}>
+                                <Input.Password placeholder={data.placeholder} />
                             </Form.Item>
                         );
                     } else if (data.tipo === 'Select') {

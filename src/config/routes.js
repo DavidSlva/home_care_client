@@ -16,6 +16,7 @@ import FormTest from "../pages/especialista/funcionalidades/FormTest";
 import AgegarEspecialista from "../pages/administrador/funcionalidades/AgregarEspecialista";
 import AdminPacientes from "../pages/administrador/funcionalidades/AdminPacientes";
 import AgregarPaciente from "../pages/administrador/funcionalidades/AgregarPaciente";
+import LayoutSpecialist from "../components/layouts/LayoutSpecialist";
 
 const adminRoutes = [ //rutas del administrador
     {
@@ -73,7 +74,7 @@ const adminFXRoutes = [ //rutas de funciones de administrador
 const especialistaRoutes = [ //rutas del personal médico
     {
         path: '/especialista',
-        layout:  LayoutAdmin,
+        layout:  LayoutSpecialist,
         element: EspecialistaHome
     }
 ]
@@ -81,27 +82,27 @@ const especialistaRoutes = [ //rutas del personal médico
 const especialistaFXRoutes = [ //rutas de funciones de personal médico
     {
         path: '/especialista/perfil',
-        layout:  LayoutAdmin,
+        layout:  LayoutSpecialist,
         element: PerfilEspecialista
     },
     {
         path: '/especialista/agenda',
-        layout:  LayoutAdmin,
+        layout:  LayoutSpecialist,
         element: AgendaEspecialista
     },
     {
         path: '/especialista/pacientes',
-        layout:  LayoutAdmin,
+        layout:  LayoutSpecialist,
         element: Pacientes
     },
     {
         path: '/especialista/crearform',
-        layout:  LayoutAdmin,
+        layout:  LayoutSpecialist,
         element: CrearForm
     },
     {
         path: '/especialista/formtest',
-        layout:  LayoutAdmin,
+        layout:  LayoutSpecialist,
         element: FormTest
     }
 

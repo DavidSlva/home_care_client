@@ -6,7 +6,7 @@ import HeaderSide from '../HeaderSide'
 import MenuSider from '../MenuSider'
 import { colors } from '../../assets/styles/colors'
 
-const LayoutAdmin = (props) => {
+const LayoutSpecialist = (props) => {
   const [hidden, setHidden] = useState(true);
   let user = localStorage.getItem('user')
     user = JSON.parse(user)
@@ -15,7 +15,7 @@ const LayoutAdmin = (props) => {
     return
   }
   
-  if(user.type !== 'administrador'){
+  if(user.type !== 'especialista'){
     return (
       <h1>Lo sentimos, no tiene acceso a esta página</h1>
     )
@@ -54,4 +54,4 @@ const LayoutAdmin = (props) => {
   )
 }
 
-export default LayoutAdmin
+export default LayoutSpecialist
