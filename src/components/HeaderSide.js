@@ -12,12 +12,13 @@ const HeaderSide = (props) => {
             <Button type='text' className='md:hidden z-50 inline-block' icon={<BarsOutlined/>} onClick={() => setHidden(!hidden)}/>
         </div>
         <div className="basis-1/5 text-center m-auto">
-            <h1 className='p-0 m-0 text-sm md:text-lg xl:text-xl'>Home Care Client</h1>
+            <h2 className='p-0 m-0 text-sm md:text-lg xl:text-xl'>Home Care Client</h2>
         </div>
         <div className="basis-2/5 text-right">
             <Space>
                 <p className='capitalize  text-gray-500 my-0 inline-block text-sm'> {user.Nombre} </p>
                 <Avatar/>
+                <Button type='text' href='/login/' className='text-gray-500'>Cerrar sesión</Button>
             </Space>
         </div>
         

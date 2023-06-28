@@ -12,7 +12,7 @@ const cards = [
   {
     title: 'Lista de Pacientes',
     description: 'Pacientes asignados ficha medica',
-    img: "https://cindercapacitacion.com/wp-content/uploads/2022/07/cursos-para-trabajadores-de-la-salud-1.jpg",
+    img: "https://www.farmaindustria.es/web/wp-content/uploads/sites/2/2020/05/ID-y-pacientes.jpg",
     enlace: "/especialista/pacientes"
   },
   {
