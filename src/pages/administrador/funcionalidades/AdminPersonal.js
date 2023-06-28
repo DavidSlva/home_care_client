@@ -1,50 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Listadinamica from '../../../components/lists/Listadinamica.js';
+import { postApi, getApi } from '../../../api/index.js';
 
 
 const columns = [
   {
     title: 'RUT',
     width: 40,
-    dataIndex: 'rut',
-    key: 'rut',
+    dataIndex: 'RUT',
+    key: 'RUT',
     fixed: 'left',
   },
   {
     title: 'Nombre',
-    width: 60,
-    dataIndex: 'nombre',
-    key: 'name',
+    width: 40,
+    dataIndex: 'Nombre',
+    key: 'Nombre',
+    fixed: 'left',
   },
   {
-    title: 'Apellido',
-    width: 60,
-    dataIndex: 'apellido',
-    key: 'apellido',
+    title: 'Cargo',
+    width: 40,
+    dataIndex: 'Cargo',
+    key: 'Cargo',
   },
   {
-    title: 'Especialidad',
-    width: 60,
-    dataIndex: 'especialidad',
-    key: 'especialidad',
-  },
-  {
-    title: 'Sexo',
-    dataIndex: 'sexo',
-    key: '1',
-    width: 30,
-  },
-  {
-    title: 'Telefono',
-    dataIndex: 'telefono',
-    key: '2',
-    width: 50,
+    title: 'Direccion',
+    width: 40,
+    dataIndex: 'Direccion',
+    key: 'Direccion',
   },
   {
     title: 'Email',
-    dataIndex: 'email',
-    key: '3',
     width: 40,
+    dataIndex: 'Mail',
+    key: 'Mail',
+  },
+  {
+    title: 'Telefono',
+    width: 40,
+    dataIndex: 'Telefono',
+    key: 'Telefono',
+    fixed: 'right',
   },
   {
     title: 'Detalles',
@@ -58,37 +55,56 @@ const columns = [
     key: 'operation',
     fixed: 'right',
     width: 30,
-    render: () => <a>Eliminar</a>,
+    render: (text, record) => (
+      <a onClick={() => handleEliminar(record)} href='/admin/AdminPersonal'>Eliminar</a>
+    ),
   },
+  // Definición de columnas
 ];
+const handleEliminar = (record) => {
+  const id = record.ID; // Acceder al ID del registro
+  console.log('Eliminar registro', id);
+  
+  postApi(`/Perfil/Especialista/eliminar/${id}`)
+    .then(response => {
+      console.log('Registro eliminado exitosamente');
+      // Realiza las operaciones necesarias después de eliminar el registro
+    })
+    .catch(error => {
+      console.error('Error al eliminar el registro:', error);
+      // Realiza las operaciones necesarias en caso de error al eliminar el registro
+    });
+};
 
-const data = [];
-for (let i = 0; i < 10; i++) {
-  data.push({
-    key: i,
-    nombre: `Eugenio ${i}`,
-    apellido: `Gonzalez ${i}`,
-    especialidad: `Kinesiología`,
-    rut: `12345678-${i}`,
-    telefono: `+569${i}${i}${i}75043`,
-    email: 'test@test.com',
-    sexo: 'M',
-  });
-}
 
 const title = 'Personal Actual';
 const boton = 'Agregar Personal';
 const enlace = '/admin/agregarespecialista';
 
 const AdminPersonal = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Realiza la petición GET para obtener los datos de los especialistas
+    getApi('/listar/Especialista')
+      .then(response => {
+        const data = response.data.lista || [];
+        setData(data);
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error al obtener los especialistas:', error);
+      });
+  }, []);
+
   return (
     <div>
-      <h2>{title}</h2>
       <div className="table-container">
-        <Listadinamica columns={columns} data={data} boton={boton} enlace={enlace} />
+        <Listadinamica columns={columns} data={data} boton={boton} enlace={enlace} title={title} />
       </div>
     </div>
   );
 };
 
 export default AdminPersonal;
+

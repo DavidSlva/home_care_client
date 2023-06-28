@@ -3,7 +3,7 @@ import FormDinamico from '../../../components/forms/FormDinamico'
 const Datos = [
     {
         label: 'Nombre Completo',
-        name: 'nombre',
+        name: 'Nombre',
         type: 'string',
         required: true,
         message: 'Este campo es obligatorio',
@@ -11,7 +11,7 @@ const Datos = [
     },
     {
         label: 'RUT',
-        name: 'rut',
+        name: 'RUT',
         type: 'string',
         required: true,
         message: 'Este campo es obligatorio',
@@ -20,7 +20,7 @@ const Datos = [
     {
         tipo: 'Number',
         label: 'Edad',
-        name: 'edad',
+        name: 'Edad',
         type: 'Number',
         required: true,
         message: 'Este campo es obligatorio',
@@ -29,7 +29,7 @@ const Datos = [
     {
         tipo: 'Number',
         label: 'Numero de Telefono',
-        name: 'numero',
+        name: 'Telefono',
         type: 'Number',
         required: true,
         message: 'Este campo es obligatorio',
@@ -66,7 +66,7 @@ const Datos = [
         type: 'string',
         required: true,
         message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese su profesión u oficio'
+        placeholder: 'Ingrese su correo'
     },
     {
         tipo: 'Password',

@@ -3,49 +3,94 @@ import FormDinamico from '../../../components/forms/FormDinamico'
 const Datos = [
     {
         label: 'Nombre',
-        name: 'nombre',
+        name: 'Nombre',
         type: 'string',
         required: true,
         message: 'Este campo es obligatorio',
-        placeholder: 'Juan'
-    },
-    {
-        label: 'Apellido',
-        name: 'apellido',
-        type: 'string',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Perez'
+        placeholder: 'Juan Carlos'
     },
     {
         label: 'RUT',
-        name: 'rut',
+        name: 'RUT',
         type: 'string',
         required: true,
         message: 'Este campo es obligatorio',
         placeholder: '12345678-9'
     },
     {
+        tipo: 'DatePicker',
+        label: 'Fecha de Nacimiento',
+        name: 'Fecha_Nacimiento',
+        type: 'date',
+        required: true,
+        message: 'Este campo es obligatorio',
+        placeholder: 'Ingrese cuando nació'
+    },
+    {
+        tipo: 'Number',
+        label: 'Numero de Telefono',
+        name: 'Telefono',
+        type: 'Number',
+        required: true,
+        message: 'Este campo es obligatorio',
+        placeholder: '968975043'
+    },
+    {   
+        label: 'Direccion', 
+        name: 'Direccion',
+        type: 'string',
+        required: false,
+        message: '',
+        placeholder: 'Ingrese Ciudad donde vive'
+    },
+    {
         tipo: 'Number',
         label: 'Edad',
-        name: 'edad',
+        name: 'Edad',
         type: 'Number',
         required: true,
         message: 'Este campo es obligatorio',
         placeholder: '45'
     },
-    {   
-        label: 'Lugar de Nacimiento',
-        name: 'lugarNacimiento',
+    {
+        tipo: 'Select',
+        label: 'Cobertura',
+        name: 'Cobertura',
         type: 'string',
-        required: false,
-        message: '',
-        placeholder: 'Ingrese Lugar donde Nació'
+        required: true,
+        message: 'Este campo es obligatorio',
+        placeholder: 'Seleccione',
+        options: ['Isapre', 'Fonasa']
+    },
+    {
+        label: 'Nombre de Familiar Responsable',
+        name: 'Nombre_Familiar',
+        type: 'string',
+        required: true,
+        message: 'Este campo es obligatorio',
+        placeholder: 'Juan Carlos'
+    },
+    {
+        label: 'Email', 
+        name: 'Mail',
+        type: 'string',
+        required: true,
+        message: 'Este campo es obligatorio',
+        placeholder: 'Ingrese su correo'
+    },
+    {
+        tipo: 'Password',
+        label: 'Contraseña', 
+        name: 'Contrasena',
+        type: 'password',
+        required: true,
+        message: 'Este campo es obligatorio',
+        placeholder: 'Ingrese contraseña'
     },
     {
         tipo: 'Select',
         label: 'Sexo',
-        name: 'sexo',
+        name: 'Sexo',
         type: 'string',
         required: true,
         message: 'Este campo es obligatorio',
@@ -55,7 +100,7 @@ const Datos = [
     {
         tipo: 'Select',
         label: 'Estado Civil',
-        name: 'estadoCivil',
+        name: 'Estado_Civil',
         type: 'string',
         required: false,
         message: '',
@@ -64,7 +109,7 @@ const Datos = [
     },
     {
         label: 'Profesión/Oficio',
-        name: 'profesion',
+        name: 'Profesion',
         type: 'string',
         required: false,
         message: '',
@@ -72,38 +117,12 @@ const Datos = [
     },
     {
         tipo: 'TextArea',
-        label: 'Diagnosticos',
-        name: 'diagnostico',
+        label: 'Diagnostico Inicial',
+        name: 'Diagnostico_Inicial',
         type: 'string',
         required: true,
         message: 'Este campo es obligatorio',
         placeholder: 'Ingrese sus diagnosticos'
-    },
-    {
-        label: 'Nombre de Familiar responsable',
-        name: 'nombreDeFamiliar',
-        type: 'string',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese el nombre de su familiar responsable'
-    },
-    {   
-        tipo: 'TextArea',
-        label: 'Expectativas y Percepción del Paciente',
-        name: 'Expetativas_y_Percepcion',
-        type: 'string',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese sus expectativas y percepción del paciente'
-    },
-    {
-        tipo: 'TextArea',
-        label: 'Impresion inicial de la entrevista',
-        name: 'ImpresionInicialDeEntrevista',
-        type: 'string',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese su impresión inicial de la entrevista'
     },
     {
         tipo: 'TextArea',
@@ -115,18 +134,9 @@ const Datos = [
         placeholder: 'Ingrese sus alergias'
     },
     {
-        tipo: 'TextArea',
-        label: 'ObjetivoGeneral',
-        name: 'ObjetivoGeneral',
-        type: 'string',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese su objetivo general'
-    },
-    {
         tipo: 'DatePicker',
-        label: 'Fecha de Atención',
-        name: 'FechaAtencion',
+        label: 'Fecha de Ingreso',
+        name: 'Fecha_Ingreso',
         type: 'date',
         required: true,
         message: 'Este campo es obligatorio',
@@ -134,57 +144,12 @@ const Datos = [
     },
     {
         tipo: 'TextArea',
-        label: 'Acciones Delegadas',
-        name: 'AccionesDelegadas',
+        label: 'Medicamentos',
+        name: 'Medicamento_Consume',
         type: 'string',
         required: true,
         message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese las acciones delegadas'
-    },
-    {
-        tipo: 'TextArea',
-        label: 'Acciones Pertinentes',
-        name: 'AccionesPertinentes',
-        type: 'string',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese las acciones pertinentes'
-    },
-    {
-        tipo: 'DatePicker',
-        label: 'Fecha de Atención Siguiente',
-        name: 'FechaAtencionSiguiente',
-        type: 'date',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese la fecha de atención siguiente'
-    },
-    {
-        tipo: 'TimePicker',
-        label: 'Hora',
-        name: 'Hora',
-        type: 'hour',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese la hora'
-    },
-    {
-        tipo: 'TextArea',
-        label: 'Dieta',
-        name: 'Dieta',
-        type: 'string',
-        required: false,
-        message: '',
-        placeholder: 'Ingrese la dieta'
-    },
-    {
-        tipo: 'DatePicker',
-        label: 'Fecha de Hoy',
-        name: 'Fecha',
-        type: 'date',
-        required: true,
-        message: 'Este campo es obligatorio',
-        placeholder: 'Ingrese la fecha de hoy'
+        placeholder: 'Ingrese sus diagnosticos'
     }
 
 ]
