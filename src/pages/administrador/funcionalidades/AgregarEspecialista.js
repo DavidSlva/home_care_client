@@ -80,12 +80,13 @@ const Datos = [
 
 ]
 const TituloForm = 'Agregar Especialista'
-
+const Atajar = '/Perfil/Especialista/crear'
+const Redireccionar = '/especialista/pacientes'
 
 const AgregarEspecialista = () => {
 
     return (
-        <FormDinamico datos={Datos} title={TituloForm}/>  
+        <FormDinamico datos={Datos} title={TituloForm} atajar={Atajar} redireccionar={Redireccionar}/>  
     )
       
 }

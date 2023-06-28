@@ -7,14 +7,10 @@ import { postApi } from '../../api'
 import { notification } from 'antd'
 
 
-
-// ACA
-
 const { Option } = Select;
 
 const FormDinamico = (props) => {
     const [form] = useForm()
-    
     const Datos = props.datos
     const Title = props.title
     const Atajar = props.atajar
