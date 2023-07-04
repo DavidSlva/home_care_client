@@ -71,7 +71,7 @@ const Datos = [
         datos: [
             {
                 label: 'RUT del Paciente',
-                name: 'Rut',
+                name: 'RUT_Paciente',
                 type: 'string',
                 required: true,
                 message: 'Este campo es obligatorio',
@@ -117,14 +117,6 @@ const Datos = [
                 required: false,
                 message: '',
                 placeholder: 'Ingrese datos de PVC'
-            },
-            {
-                label: 'Ingesta',
-                name: 'Ingesta',
-                type: 'string',
-                required: false,
-                message: '',
-                placeholder: 'Ingrese datos de Ingesta'
             },
             {
                 label: 'Via',
@@ -179,10 +171,11 @@ const Datos = [
     },
     {
         titulo: 'Suministro Medicamento',
+        atajar: '/dosis/ingresa',
         datos: [
             {
                 label: 'RUT del Paciente',
-                name: 'Rut',
+                name: 'RUT_Paciente',
                 type: 'string',
                 required: true,
                 message: 'Este campo es obligatorio',
@@ -195,14 +188,6 @@ const Datos = [
                 required: true,
                 message: 'Este campo es obligatorio',
                 placeholder: 'Ingrese Medicamentos para el Paciente'
-            },
-            {
-                label: 'Vias de Administracion',
-                name: 'Via',
-                type: 'string',
-                required: true,
-                message: 'Este campo es obligatorio',
-                placeholder: 'Ingrese el Pulso del Paciente'
             },
             {
                 label: 'Complicaciones',
